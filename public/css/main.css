@@ -1,0 +1,127 @@
+#
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  background-color: #fff;
+}
+
+input[type=text].error, input[type=password].error, input[type=file].error, textarea.error, select.error, a.error, input[type=checkbox].error { border-color:#FF3333; background-color: #FFA4A4; }
+
+.menu-login{
+    margin-top:50px;
+    border-radius: 15px;
+    border: 2px solid #ddd;
+    background-color: white;
+}
+
+.centrar-imagen{
+    text-align:center;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    border-color:none!important;
+}
+.container{
+    background-color:white;
+    margin-top: 1px;
+    padding-top: 0px;
+    
+    border:solid 1px #EBEBEB;
+	
+}
+.margen-superior-buscador{
+    padding-top: 10px!important;
+}
+
+#header{
+    background: #f2f1ea;
+    padding: 30px 20px;
+    color: #333;
+    margin:0;
+}
+.container-fluid{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+.navbar-default{
+    background-color: #deded7;
+    border-color: #deded7;
+}
+.home-nav{
+    text-decoration:none;
+    margin: 0 20px;
+    padding:12px;
+    line-height: 20px;
+    display: block;  
+    color: #333
+}
+.navbar-right{
+    margin-right: 5px;
+}
+.menu-login-intranet{
+    margin-top:40px;
+    margin-right: 10px;
+}
+.menu-tablas{
+    margin:10;
+    border: 2px solid #ddd;
+    background-color:#ECEBFF;
+    color:black;
+}
+.div-caja{
+    background-color: #858585;
+    color:white;
+    border-radius: 2px;
+    
+}
+.menu-tablas-1{
+    margin:10;
+    border: 2px solid #ddd;
+    background-color:#FCEEEE;
+    color:black;
+}
+
+.text-title {
+    color:white;
+    padding-top:5px;
+}
+.fondo-celda{
+    background-color: darkcyan;
+    padding: 5px;
+}
+.fondo-celda-1{
+    background-color: #47cbcf;
+    padding: 5px;
+}
+
+.tab-content{
+    margin:10px;
+
+}
+.img-circle{
+    border:10px solid #ddd;
+}
+.titulo {
+    color: darkgray;
+}
+.img-circle{
+    border:10px solid #ddd;
+    }
+
+h4{
+    color:#0aa5c7;
+   
+    text-decoration: underline;
+}
+.table-bordered{
+    background-color: white;
+}
+.borde-separacion{
+    border-right:2px solid #ddd;
+}
+.logo-Imagen{
+    margin-top: 35px;
+}

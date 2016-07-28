@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hospital Posadas</title>
+        <meta name="description" content="Login">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+           
+        <div class="container">
+            <div role="tabpanel" class="tab-pane active" id="dotacion">
+            	<div class="row bg-info">
+                	<div class="col-md-3" >
+                        <img class="image-responsive logo-Imagen" src="img/LogoPosadas.jpg" width="100%" >
+                    </div> 
+                    <div class="col-md-6 text-center" style="padding-top:20px; color:#175A9A">
+                        <h1>Sistema RRHH - Hospital Posadas</h1>
+                    </div>
+                    <div class="col-md-3 text-left" >
+                        <ul class="nav nav-tabs pull-right">          
+                            <button class="btn btn-primary">Mi Cuenta</button>           
+                            <button class="btn btn-primary">Salir</button>            
+                        </ul>
+                    </div>    
+                   
+                </div>
+                <div class="row">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active">
+                            <a href="#estructura" aria-controls="estructura" role="tab" data-toggle="tab">Estructura</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#personal-activo" aria-controls="personal-medicos" role="tab" data-toggle="tab">Personal Activo</a>
+                        </li>
+                            
+                        <li role="presentation">
+                            <a href="#personal-inactivo" aria-controls="personal-inactivo" role="tab" data-toggle="tab">Personal Inactivo</a>
+                        </li>
+                <!--        <li role="presentation">
+                            <a href="#tablas" aria-controls="tablas" role="tab" data-toggle="tab">Tablas</a>
+                        </li>
+                        
+                         <li role="presentation">
+                            <a href="#nuevo-legajo" aria-controls="nuevo-legajo" role="tab" data-toggle="tab">Nuevo Legajo</a>
+                        </li>
+                    -->    
+                    </ul> 
+                </div> 
+                
+                <div class="tab-content">
+<!--Comienza Estructura-->
+                    <div role="tabpanel" class="tab-pane active" id="estructura">
+                       <div class="panel panel-primary">
+                            <div class="panel-heading">Estructura</div>
+                                <div class="panel-body">
+    								<div class="row">
+                                         <div class="col-md-2">
+                                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                                             
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                     </div>
+                                     
+                                </div>
+                            </div>
+                     </div>
+<!--FIN Estructura-->
+<!--Comienza Estructura-->
+                    <div role="tabpanel" class="tab-pane" id="personal-activo">
+                       <div class="panel panel-primary">
+                            <div class="panel-heading">Personal Activo</div>
+                                <div class="panel-body">
+                                	<div class="container-fluid">
+                                    	
+                                      <row>
+                                        <!--<h2>Titulo</h2> -->   
+                                      <form>
+                                            <div class="col-md-2">
+                                            	<div class="form-group">
+                                                    <select id="tipo_busqueda" class="form-control" name="tipo_busqueda" >
+                                                      <option value="dni">DNI</option>
+                                                      <option value="legajo">Legajo</option>
+                                                      <option value="apellido">Apellido</option>
+                                                      <option value="nombre">Nombre</option>
+                                                    </select>   
+                                                </div>         
+                                            </div>
+                                            
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                	<input type="text" class="form-control" id="busqueda" name="busqueda">
+                                            	</div>             
+                                            </div>
+                                        	<div class="col-md-4">
+                                                <div class="form-group">
+                                                	<button id="new" onclick="" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar
+                                                    </button>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href=""> &bull; Buscador avanzado</a> 
+                                            	</div>             
+                                            </div>
+                                        
+                                      <form>
+                                      
+                                      </row>  
+                                      <row>
+                                          <div class="col-md-12">
+                                             <hr>                 
+                                          </div>
+                                      </row>      
+                                      <row>
+                                          <div class="col-md-12">
+                                      <table class="table table-hover">
+                                        <thead>
+                                          <tr>
+                                          	<th>Legajo</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Documento de Identidad</th>
+                                            <th class="col-md-3" align="center">Opciones</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <?php
+                                          foreach ($empleados as $e) {
+                                            ?>
+                                            <tr>
+                                              <td><?=$e['id']?></td>
+                                              <td><?=$e['name']?></td>
+                                              <td><?=$e['lastname']?></td>
+                                              <td><?=$e['document']?></td>
+                                              <td class="col-md-3">
+                                              	  <button id="print" onclick="" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imp
+                                                  </button>
+                                                  <button id="edit" onclick="location.href='/legajo/<?=$e['id']?>/edit';" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+                                                  </button>
+                                                  <button id="see" onclick="location.href='/legajo/<?=$e['id']?>/edit';" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver
+                                                  </button>
+                                              </td>
+                                            </tr>
+                                            <?php
+                                          }
+                                          ?>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </row> 
+                                  </div> 
+                                </div>
+                            </div>
+                     </div>
+<!--FIN Estructura-->
+
+<!--Comienza Estructura-->
+                    <div role="tabpanel" class="tab-pane" id="personal-inactivo">
+                       <div class="panel panel-primary">
+                            <div class="panel-heading">Personal Inactivo</div>
+                                <div class="panel-body">
+    								<div class="container-fluid">
+                                    	
+                                      <row>
+                                        <!--<h2>Titulo</h2> -->   
+                                      <form>
+                                            <div class="col-md-2">
+                                            	<div class="form-group">
+                                                    <select id="tipo_busqueda" class="form-control" name="tipo_busqueda" >
+                                                      <option value="dni">DNI</option>
+                                                      <option value="legajo">Legajo</option>
+                                                      <option value="apellido">Apellido</option>
+                                                      <option value="nombre">Nombre</option>
+                                                    </select>   
+                                                </div>         
+                                            </div>
+                                            
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                	<input type="text" class="form-control" id="busqueda" name="busqueda">
+                                            	</div>             
+                                            </div>
+                                        	<div class="col-md-4">
+                                                <div class="form-group">
+                                                	<button id="new" onclick="" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar
+                                                    </button>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href=""> &bull; Buscador avanzado</a> 
+                                            	</div>             
+                                            </div>
+                                        
+                                      <form>
+                                      
+                                      </row>  
+                                      <row>
+                                          <div class="col-md-12">
+                                             <hr>                 
+                                          </div>
+                                      </row>      
+                                      <row>
+                                          <div class="col-md-12">
+                                      <table class="table table-hover">
+                                        <thead>
+                                          <tr>
+                                          	<th>Legajo</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Documento de Identidad</th>
+                                            <th class="col-md-3" align="center">Opciones</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <?php
+                                          foreach ($empleados as $e) {
+                                            ?>
+                                            <tr>
+                                              <td><?=$e['id']?></td>
+                                              <td><?=$e['name']?></td>
+                                              <td><?=$e['lastname']?></td>
+                                              <td><?=$e['document']?></td>
+                                              <td class="col-md-3">
+                                              	  <button id="print" onclick="" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imp
+                                                  </button>
+                                                  <button id="edit" onclick="location.href='/legajo/<?=$e['id']?>/edit';" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+                                                  </button>
+                                                  <button id="see" onclick="location.href='/legajo/<?=$e['id']?>/edit';" type="button" class="btn btn-primary" aria-label="Left Align">
+                                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver
+                                                  </button>
+                                              </td>
+                                            </tr>
+                                            <?php
+                                          }
+                                          ?>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </row> 
+                                  </div> 
+                                     
+                                </div>
+                            </div>
+                     </div>
+<!--FIN Estructura-->
+
+<!--Comienza Estructura-->
+                    <div role="tabpanel" class="tab-pane" id="tablas">
+                       <div class="panel panel-primary">
+                            <div class="panel-heading">Tablas</div>
+                                <div class="panel-body">
+    								<div class="row">
+                                         <div class="col-md-2">
+                                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                                             
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                     </div>
+                                     
+                                </div>
+                            </div>
+                     </div>
+<!--FIN Estructura-->
+
+<!--Comienza Estructura-->
+                    <div role="tabpanel" class="tab-pane" id="nuevo-legajo">
+                       <div class="panel panel-primary">
+                            <div class="panel-heading">Nuevo Legajo</div>
+                                <div class="panel-body">
+    								<div class="row">
+                                         <div class="col-md-2">
+                                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                                             
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                        <div class="col-md-2">
+                                            
+                                        </div>
+                                     </div>
+                                     
+                                </div>
+                            </div>
+                     </div>
+<!--FIN Estructura-->
+                     
+                            
+        		</div><!--content-->
+            </div><!--dotación-->
+
+
+        </div><!--container-->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.datetimepicker').datetimepicker({
+                format: 'DD/MM/YYYY'
+            });
+        });
+    </script>
+    </body>
+</html>
+

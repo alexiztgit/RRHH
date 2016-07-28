@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css" />
+        <?php if(Config::get('syntara::config.direction') === 'rtl'): ?>
+            <link rel="stylesheet" href="<?php echo asset('packages/mrjuliuss/syntara/assets/css/bootstrap-rtl.min.css'); ?>" media="all">
+            <link rel="stylesheet" href="<?php echo asset('packages/mrjuliuss/syntara/assets/css/base-rtl.css'); ?>" media="all">
+        <?php endif; ?>
+        <link rel="stylesheet" href="<?php echo asset('packages/mrjuliuss/syntara/assets/css/toggle-switch.css'); ?>" />
+
+        <link rel="stylesheet" href="<?php echo asset('packages/mrjuliuss/syntara/assets/css/base.css'); ?>" media="all">
+         <?php if(Config::get('syntara::config.direction') === 'rtl'): ?>
+            <link rel="stylesheet" href="<?php echo asset('packages/mrjuliuss/syntara/assets/css/base-rtl.css'); ?>" media="all">
+        <?php endif; ?>
+
+        <?php if(!empty($favicon)): ?>
+        <link rel="icon" <?php echo !empty($faviconType) ? 'type="' . $faviconType . '"' : ''; ?> href="<?php echo $favicon; ?>" />
+        <?php endif; ?>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="<?php echo asset('packages/mrjuliuss/syntara/assets/js/dashboard/base.js'); ?>"></script>
+
+        <title><?php echo (!empty($siteName)) ? "RRHH" : "RRHH"; ?> - <?php echo isset($title) ? $title : ''; ?></title>
+    </head>
+    <body>
+        <?php echo $__env->make(Config::get('syntara::views.header'), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo isset($breadcrumb) ? Breadcrumbs::create($breadcrumb) : '';; ?>
+
+        <div id="content">
+            <?php echo $__env->yieldContent('content'); ?>
+        </div>
+    </body>
+</html>
